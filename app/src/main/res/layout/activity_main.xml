@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F9F9F9"
+    android:fitsSystemWindows="true"
+    android:padding="0dp">
+
+    <!-- Kinetic Editorial Header Zone -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="32dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STREAM\nFETCH"
+            android:textColor="#000000"
+            android:textSize="56sp"
+            android:lineSpacingExtra="-10dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black" />
+
+
+    </LinearLayout>
+
+    <!-- Core Scrollable Area (Expands to take middle space) -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <!-- Formats ScrollView -->
+        <ScrollView
+            android:id="@+id/layoutDownloaderList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/llFormats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <!-- Recent Downloads ScrollView -->
+        <ScrollView
+            android:id="@+id/layoutRecent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/llRecentFiles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:orientation="vertical" />
+        </ScrollView>
+    </FrameLayout>
+
+    <!-- Thumb-Reachable Control Zone (Kinetic White Container) -->
+    <LinearLayout
+        android:id="@+id/layoutControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="24dp"
+        android:elevation="12dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="#BB1800"
+            android:visibility="gone"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#1B1B1B"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:paddingBottom="12dp"
+            android:gravity="center"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/etUrl"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:hint="https://stream.provider.com/v/..."
+            android:textColorHint="#ABABAB"
+            android:textColor="#1B1B1B"
+            android:background="@drawable/bg_rounded_input"
+            android:inputType="textUri"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <CheckBox
+            android:id="@+id/cbAutoMerge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable Auto-Merge"
+            android:textColor="#1B1B1B"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:buttonTint="#BB1800"
+            android:checked="true"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnAnalyze"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="ANALYZE"
+            android:background="@drawable/bg_rounded_button"
+            android:backgroundTint="#000000"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:letterSpacing="0.1"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Bottom Tab Navigation -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnTabDownloader"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="DOWNLOAD"
+                android:background="@drawable/bg_rounded_button"
+                android:backgroundTint="#000000"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnTabRecent"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="RECENT"
+                android:background="@drawable/bg_rounded_button"
+                android:backgroundTint="#F3F3F3"
+                android:textColor="#474747"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
